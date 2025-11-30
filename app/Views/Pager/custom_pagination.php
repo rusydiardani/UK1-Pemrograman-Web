@@ -1,0 +1,68 @@
+<?php
+/**
+ * Custom Pagination Template
+ * Desain modern dengan Bootstrap 5
+ */
+
+$pager->setSurroundCount(2);
+?>
+
+<nav aria-label="<?= lang('Pager.pageNavigation') ?>">
+    <ul class="pagination pagination-modern mb-0">
+        <?php if ($pager->hasPrevious()) : ?>
+            <li class="page-item">
+                <a href="<?= $pager->getFirst() ?>" class="page-link" aria-label="<?= lang('Pager.first') ?>">
+                    <i class="bi bi-chevron-double-left"></i>
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="<?= $pager->getPrevious() ?>" class="page-link" aria-label="<?= lang('Pager.previous') ?>">
+                    <i class="bi bi-chevron-left"></i>
+                </a>
+            </li>
+        <?php else : ?>
+            <li class="page-item disabled">
+                <span class="page-link">
+                    <i class="bi bi-chevron-double-left"></i>
+                </span>
+            </li>
+            <li class="page-item disabled">
+                <span class="page-link">
+                    <i class="bi bi-chevron-left"></i>
+                </span>
+            </li>
+        <?php endif ?>
+
+        <?php foreach ($pager->links() as $link) : ?>
+            <li class="page-item <?= $link['active'] ? 'active' : '' ?>">
+                <a href="<?= $link['uri'] ?>" class="page-link">
+                    <?= $link['title'] ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+
+        <?php if ($pager->hasNext()) : ?>
+            <li class="page-item">
+                <a href="<?= $pager->getNext() ?>" class="page-link" aria-label="<?= lang('Pager.next') ?>">
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="<?= $pager->getLast() ?>" class="page-link" aria-label="<?= lang('Pager.last') ?>">
+                    <i class="bi bi-chevron-double-right"></i>
+                </a>
+            </li>
+        <?php else : ?>
+            <li class="page-item disabled">
+                <span class="page-link">
+                    <i class="bi bi-chevron-right"></i>
+                </span>
+            </li>
+            <li class="page-item disabled">
+                <span class="page-link">
+                    <i class="bi bi-chevron-double-right"></i>
+                </span>
+            </li>
+        <?php endif ?>
+    </ul>
+</nav>

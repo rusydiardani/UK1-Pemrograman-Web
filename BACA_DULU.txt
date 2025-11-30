@@ -1,0 +1,89 @@
+================================================================================
+                    SISTEM PERKULIAHAN - PANDUAN AKSES
+================================================================================
+
+MASALAH ANDA:
+-------------
+URL yang Anda akses SALAH!
+❌ http://localhost:5080/authenticate  <-- SALAH!
+
+URL YANG BENAR:
+---------------
+✅ http://localhost/kuliah_ci4/public/
+
+CARA AKSES APLIKASI:
+--------------------
+
+1. PASTIKAN WAMP RUNNING
+   - Icon WAMP harus HIJAU
+   - Jika tidak, klik "Start All Services"
+
+2. BUKA BROWSER, KETIK:
+   http://localhost/kuliah_ci4/public/
+
+3. LOGIN DENGAN:
+   Admin:
+   - Username: admin
+   - Password: password
+   
+   Mahasiswa:
+   - Username: 2101001
+   - Password: password
+   
+   Dosen:
+   - Username: 0101018801
+   - Password: password
+
+CARA CEPAT:
+-----------
+1. Buka browser
+2. Ketik: localhost/kuliah_ci4/public/
+3. Login: admin / password
+4. Selesai!
+
+ATAU:
+-----
+Akses: http://localhost/kuliah_ci4/
+(akan otomatis redirect ke public/)
+
+FILE BANTUAN:
+-------------
+- CARA_AKSES_APLIKASI.md  = Panduan lengkap cara akses
+- SOLUSI_LOGIN.md         = Solusi jika tidak bisa login
+- QUICK_START.md          = Panduan cepat 5 menit
+- test_koneksi.php        = Test koneksi database
+
+TROUBLESHOOTING:
+----------------
+1. Error "can't be reached"
+   → Pastikan WAMP running (icon hijau)
+   → Test: http://localhost/ (harus muncul halaman WAMP)
+
+2. Error "404 Not Found"
+   → Pastikan URL pakai /public/ di akhir
+   → Benar: localhost/kuliah_ci4/public/
+
+3. Tidak bisa login
+   → Import ulang database_lengkap.sql
+   → Atau jalankan fix_password.sql
+
+4. Database error
+   → Pastikan MySQL running
+   → Cek .env sudah benar
+   → Test: localhost/kuliah_ci4/test_koneksi.php
+
+CATATAN PENTING:
+----------------
+- SELALU gunakan /public/ di URL
+- Port WAMP default adalah 80 (tidak perlu ditulis)
+- Jangan akses port 5080 atau 8080
+- Password semua user adalah: password
+
+KONTAK:
+-------
+Jika masih error, screenshot dan cek:
+- writable/logs/log-[tanggal].log
+
+================================================================================
+                        SELAMAT MENGGUNAKAN!
+================================================================================
